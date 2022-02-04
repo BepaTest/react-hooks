@@ -10,7 +10,7 @@ import VanillaTilt from 'vanilla-tilt'
 // component with hooks, then go ahead and do this exercise.
 
 function Tilt({children}) {
-  const tiltRef = React.createRef()
+  const tiltRef = React.useRef()
   useEffect(() => {
     const tiltNode = tiltRef.current
     const vanillaTiltOptions = {
