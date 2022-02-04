@@ -11,6 +11,7 @@ import VanillaTilt from 'vanilla-tilt'
 
 function Tilt({children}) {
   const tiltRef = React.useRef()
+
   useEffect(() => {
     const tiltNode = tiltRef.current
     const vanillaTiltOptions = {
@@ -23,7 +24,8 @@ function Tilt({children}) {
     return function cleanup() {
       tiltNode.current.vanillaTilt.destroy()
     }
-  })
+  }, [])
+
   return (
     <div ref={tiltRef} className="tilt-root">
       <div className="tilt-child">{children}</div>
